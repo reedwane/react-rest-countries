@@ -11,6 +11,7 @@
 	--Mode-Background: hsl(207, 26%, 17%);
 	--Mode-Text: hsl(0, 0%, 100%);
 	--box-shadow: black;
+	/* --search-url: url("./lens-white.png"); */
 }
 body {
 	background-color: var(--Mode-Background);
@@ -20,20 +21,34 @@ body {
 	overflow-x: hidden;
 }
 
-.theme-toggle {
+/* to be able to evaluate the present theme */
+.theme-toggle span,
+.far {
 	cursor: pointer;
 	background-color: var(--Mode-Elements);
+}
+.pre-animation {
+	opacity: 0.5;
+	transition: opacity ease-out 0.5s;
+}
+.post-animation {
+	opacity: ;
+	transition: opacity ease-in 0.5s;
 }
 
 .header {
 	height: 3em;
 	padding: 1em;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	background-color: var(--Mode-Elements);
 	box-shadow: 0px 0px 1px var(--box-shadow);
 }
 .header p,
 h1 {
 	display: inline-block;
+	cursor: default;
 }
 
 h1 {
@@ -67,7 +82,7 @@ input {
 	border-radius: 5px;
 	color: var(--Mode-Text);
 	text-indent: 15%;
-	background: var(--Mode-Elements) url("./lens-white.png") 7% 50% / 5% no-repeat;
+	background: var(--Mode-Elements) url("./lens-black.png") 7% 50% / 5% no-repeat;
 }
 
 ::placeholder {
@@ -79,6 +94,17 @@ input:focus {
 	box-shadow: 0px 0px 2px var(--box-shadow);
 	outline: none;
 	border: 2px solid var(--Mode-Text);
+}
+
+.search-filter p {
+	cursor: pointer;
+	border: 1px solid var(--Mode-Text);
+	display: inline-block;
+	position: absolute;
+	left: 76%;
+	top: 4.5em;
+	background-color: var(--Mode-Background);
+	padding: 3%;
 }
 
 select {
@@ -207,6 +233,11 @@ code {
 	.countries-list {
 		margin: 5% 25%;
 	}
+	.search-filter p {
+		left: 80%;
+		top: 5em;
+		padding: 2.5%;
+	}
 }
 
 @media screen and (min-width: 600px) {
@@ -224,6 +255,11 @@ code {
 		width: 70%;
 		height: 4em;
 		margin: 0 15%;
+	}
+	.search-filter p {
+		left: 66%;
+		top: 7.1em;
+		padding: 2.7%;
 	}
 	select {
 		height: 3em;
@@ -299,6 +335,11 @@ code {
 		width: 45%;
 		height: 4em;
 		margin: 0;
+	}
+	.search-filter p {
+		left: 37%;
+		top: 8.5em;
+		padding: 2%;
 	}
 	select {
 		width: 20%;

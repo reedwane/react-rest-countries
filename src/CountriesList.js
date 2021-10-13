@@ -27,7 +27,10 @@ const CountriesList = (props) => {
 								<div className="detail">
 									<h2 className="country-name">{country.name.common}</h2>
 									<p className="population">
-										Populaton: <span className="tag">{country.population}</span>
+										Populaton:{" "}
+										<span className="tag">
+											{country.population.toLocaleString("en")}
+										</span>
 									</p>
 									<p className="region">
 										Region: <span className="tag">{country.region}</span>

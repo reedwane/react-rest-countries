@@ -22,7 +22,8 @@ const MoreDetails = (props) => {
 				</p>
 
 				<p className="population">
-					Population: <span className="tag">{details.population}</span>
+					Population:{" "}
+					<span className="tag">{details.population.toLocaleString("en")}</span>
 				</p>
 				<p className="region">
 					Region: <span className="tag">{details.region}</span>
