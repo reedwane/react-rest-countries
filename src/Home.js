@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CountriesList from "./CountriesList";
+import lens from "./lens-black.png";
 
 const Home = () => {
 	const [url, setUrl] = useState("https://restcountries.com/v3.1/all");
@@ -21,6 +22,15 @@ const Home = () => {
 	return (
 		<div>
 			<div className="search-filter">
+				{/* <img
+					src={lens}
+					alt="search-lens"
+					onClick={() => {
+						if (search !== "") {
+							setUrl("https://restcountries.com/v3.1/name/" + search);
+						}
+					}}
+				/> */}
 				<input
 					type="search"
 					name="search"
@@ -37,15 +47,7 @@ const Home = () => {
 					}}
 					placeholder="Search for a country by name..."
 				/>
-				<p
-					onClick={() => {
-						if (search !== "") {
-							setUrl("https://restcountries.com/v3.1/name/" + search);
-						}
-					}}
-				>
-					search
-				</p>
+
 				<select
 					required
 					id="filter"
