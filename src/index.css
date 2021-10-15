@@ -59,24 +59,38 @@ h1 {
 	text-align: right;
 }
 
+.input-div {
+	display: inline-block;
+	width: 90%;
+	height: 3em;
+	margin: 3% 5% 0;
+	padding-left: 10%;
+	background-color: var(--Mode-Elements);
+	box-shadow: 0px 0px 2px var(--box-shadow);
+}
+.input-div img {
+	display: inline-block;
+	margin-right: 3%;
+	width: 7%;
+	position: relative;
+	top: 0.5em;
+}
+
 input,
 select {
 	display: inline-block;
 	font-size: 1em;
 	font-weight: 600;
-	box-shadow: 0px 0px 2px var(--box-shadow);
 }
 input {
 	cursor: pointer;
 	width: 90%;
 	background-color: var(--Mode-Elements);
-	height: 3em;
+	height: 95%;
 	border: none;
-	margin: 0 5%;
 	border-radius: 5px;
 	color: var(--Mode-Text);
-	text-indent: 15%;
-	background: var(--Mode-Elements) url("./lens-white.png") 7% 50% / 5% no-repeat;
+	text-indent: 5%;
 }
 
 ::placeholder {
@@ -92,6 +106,7 @@ input:focus {
 
 select {
 	background-color: var(--Mode-Elements);
+	box-shadow: 0px 0px 2px var(--box-shadow);
 	border: none;
 	height: 2.5em;
 	padding: 0.5em;
@@ -229,10 +244,17 @@ code {
 		margin-top: 5%;
 		padding: 0 10%;
 	}
+	.input-div {
+		height: fit-content;
+		padding-left: 5%;
+	}
+	.input-div img {
+		top: 0.7em;
+	}
 	input {
-		width: 70%;
-		height: 4em;
-		margin: 0 15%;
+		height: 3em;
+		position: relative;
+		top: -10%;
 	}
 	select {
 		height: 3em;
@@ -304,8 +326,12 @@ code {
 		margin-top: 5%;
 		padding: 0 5%;
 	}
-	input {
+
+	.input-div {
 		width: 45%;
+		margin: 0;
+	}
+	input {
 		height: 4em;
 		margin: 0;
 	}
@@ -313,7 +339,7 @@ code {
 		width: 20%;
 		height: 4em;
 		margin: 0;
-		margin-left: 35%;
+		margin-left: 30%;
 	}
 	.countries-list {
 		margin: 5%;

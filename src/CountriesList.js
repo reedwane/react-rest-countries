@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const CountriesList = (props) => {
+	//this assess the modified url passed as a prop based on the default, search or filter
 	let url = props.url;
 	// console.log(url);
 	const { data, loading, error } = useFetch(url);

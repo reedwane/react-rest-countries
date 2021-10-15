@@ -1,13 +1,18 @@
 import BorderCountries from "./BorderCountries";
 
 const MoreDetails = (props) => {
+	// details is the data for the specific country clicked passed down as a prop
 	const details = props.data;
+
+	// this is done as there are distinct keys for native names for each country
 	let nativeNameKey = Object.keys(details.name.nativeName)[0];
 	let nativeName = details.name.nativeName[nativeNameKey].official;
 
+	// we need the keys for the languages as well
 	let lang = Object.keys(details.languages);
 	let languages = [];
 	for (let i = 0; i < lang.length; i++) {
+		//pushing the languages into an array
 		languages.push(details.languages[lang[i]]);
 	}
 

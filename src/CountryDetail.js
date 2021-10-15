@@ -3,8 +3,8 @@ import MoreDetails from "./MoreDetails";
 import useFetch from "./useFetch";
 
 const CountryDetail = () => {
-	const { country } = useParams();
-	let url = "https://restcountries.com/v3.1/alpha/" + country;
+	const { country } = useParams(); //gets the cca3 code from the url clicked to know which specific country is clicked
+	let url = "https://restcountries.com/v3.1/alpha/" + country; //sets the url for that country
 
 	const { data, loading, error } = useFetch(url);
 
@@ -23,6 +23,7 @@ const CountryDetail = () => {
 				</div>
 			)}
 
+			{/* if the data retrieved is an array as expected, we render the details using the first data in the array */}
 			{data && Array.isArray(data) && <MoreDetails data={data[0]} />}
 		</div>
 	);

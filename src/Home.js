@@ -11,8 +11,10 @@ const Home = () => {
 	useEffect(() => {
 		if (filter) {
 			if (filter === "all") {
+				//reseting the url to get data for all countries
 				setUrl("https://restcountries.com/v3.1/all");
 			} else {
+				//setting the url to get the data for the selected region based on the filter value
 				console.log(filter);
 				setUrl("https://restcountries.com/v3.1/region/" + filter);
 			}
@@ -22,35 +24,39 @@ const Home = () => {
 	return (
 		<div>
 			<div className="search-filter">
-				{/* <img
-					src={lens}
-					alt="search-lens"
-					onClick={() => {
-						if (search !== "") {
-							setUrl("https://restcountries.com/v3.1/name/" + search);
-						}
-					}}
-				/> */}
-				<input
-					type="search"
-					name="search"
-					id="search"
-					value={search}
-					onChange={(e) => {
-						setSearch(e.target.value);
-					}}
-					onKeyUp={(e) => {
-						if (e.key === "Enter" && search !== "") {
-							// this changes the url to fetch from when a search value is entered
-							setUrl("https://restcountries.com/v3.1/name/" + search);
-						}
-					}}
-					placeholder="Search for a country by name..."
-				/>
+				<div className="input-div">
+					<img
+						src={lens}
+						alt="lens"
+						onClick={() => {
+							// making the search icon respond to click events and search
+							if (search !== "") {
+								setUrl("https://restcountries.com/v3.1/name/" + search);
+							}
+						}}
+					/>
+					<input
+						type="search"
+						name="search"
+						id="search"
+						value={search}
+						onChange={(e) => {
+							setSearch(e.target.value);
+						}}
+						onKeyUp={(e) => {
+							if (e.key === "Enter" && search !== "") {
+								// this changes the url to fetch from when a search value is entered
+								setUrl("https://restcountries.com/v3.1/name/" + search);
+							}
+						}}
+						placeholder="Search for a country by name..."
+					/>
+				</div>
 
 				<select
 					required
 					id="filter"
+					// making the filter get all countries or the specified region alone
 					value={filter || "all"}
 					name="filter"
 					onChange={(e) => {
@@ -66,6 +72,8 @@ const Home = () => {
 				</select>
 			</div>
 
+			{/* passing the modified url as a prop to the component that renders the
+			list of the countries */}
 			<CountriesList url={url} />
 		</div>
 	);
