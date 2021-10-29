@@ -393,7 +393,7 @@ code {
 	.more-detail {
 		margin: 5%;
 		grid-template-columns: 40% 30% 30%;
-		grid-template-row: auto auto;
+		grid-template-rows: auto auto;
 		row-gap: 5%;
 	}
 	.specific {
