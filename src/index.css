@@ -371,6 +371,10 @@ code {
 }
 
 @media screen and (min-width: 1440px) {
+	body {
+		margin: 0 auto;
+		max-width: 1440px;
+	}
 	.countries-list {
 		grid-template-columns: 22% 22% 22% 22%;
 		column-gap: 4%;
